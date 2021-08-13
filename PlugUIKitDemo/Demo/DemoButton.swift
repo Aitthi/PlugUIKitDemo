@@ -15,7 +15,7 @@ struct DemoButton: View {
             VStack(alignment: .center){
                 Text("Button").font(.title)
                 Divider()
-            }.padding(.bottom, 20)
+            }.padding(.bottom, 10)
             Group{
                 Text("Small size")
                     .font(.headline)
