@@ -48,6 +48,13 @@ struct DemoButton: View {
                     .padding(.horizontal, 20)
                 DemoButtonFullWidth()
             }
+            Group{
+                Text("Button with icon")
+                    .font(.headline)
+                    .frame(width: UISize.width-40, height: 30, alignment: .leading)
+                    .padding(.horizontal, 20)
+                DemoButtonIcon()
+            }
         }
         Spacer()
     }
@@ -56,17 +63,22 @@ struct DemoButton: View {
 struct DemoButtonSmall: View {
     var body: some View{
         HStack{
-            
-            PgUiButton(Label: "Primary", Size: .small){
+            PgUiButton(action: {
                 print("Okay!")
+            }, Size: .small){
+                Text("Primary")
             }
             
-            PgUiButton(Label: "Secondary", ColorType: .secondary, Size: .small){
+            PgUiButton(action: {
                 print("Okay!")
+            }, ColorType: .secondary, Size: .small){
+                Text("Secondary")
             }
             
-            PgUiButton(Label: "Tertiary", ColorType: .tertiary, Size: .small){
+            PgUiButton(action: {
                 print("Okay!")
+            },ColorType: .tertiary, Size: .small){
+                Text("Tertiary")
             }
         }.padding(.vertical, 10)
     }
@@ -78,19 +90,27 @@ struct DemoButtonDefault: View {
     var body: some View{
         VStack{
             HStack{
-                PgUiButton(Label: "Light button", Style: .light){
+                PgUiButton(action: {
                     print("Okay!")
+                }, Style: .light){
+                    Text("Light button")
                 }
-                PgUiButton(Label: "Light color", ColorType: .light){
+                PgUiButton(action: {
                     print("Okay!")
+                }, ColorType: .light){
+                    Text("Light color")
                 }
             }.padding(.bottom, 10)
             HStack{
-                PgUiButton(Label: "Light button", ColorType: .tertiary, Style: .lightOutline){
+                PgUiButton(action: {
                     print("Okay!")
+                }, ColorType: .tertiary, Style: .lightOutline){
+                    Text("Outline button")
                 }
-                PgUiButton(Label: "Default button", ColorType: .tertiary, Style: .lightFill){
+                PgUiButton(action: {
                     print("Okay!")
+                }, ColorType: .tertiary, Style: .lightFill){
+                    Text("Fill button")
                 }
             }.frame(width: UISize.width, height: 50, alignment: .center)
             .padding(.vertical, 10)
@@ -104,14 +124,20 @@ struct DemoButtonDefault: View {
 struct DemoButtonLarge: View {
     var body: some View{
         HStack{
-            PgUiButton(Label: "Success", ColorType: .success, Size: .large){
+            PgUiButton(action: {
                 print("Okay!")
+            }, ColorType: .success, Size: .large){
+                Text("Success")
             }
-            PgUiButton(Label: "Warning", ColorType: .warning, Size: .large){
+            PgUiButton(action: {
                 print("Okay!")
+            }, ColorType: .warning, Size: .large){
+                Text("Warning")
             }
-            PgUiButton(Label: "Danger", ColorType: .danger, Size: .large){
+            PgUiButton(action: {
                 print("Okay!")
+            }, ColorType: .danger, Size: .large){
+                Text("Danger")
             }
         }.padding(.vertical, 10)
     }
@@ -122,8 +148,10 @@ struct DemoButtonWidthBlock: View {
     let UISize = UIScreen.main.bounds
     var body: some View{
         HStack{
-            PgUiButton(Label: "A block button light", ColorType: .secondary, Width: .block){
+            PgUiButton(action: {
                 print("Okay!")
+            }, ColorType: .secondary, Width: .block){
+                Text("A block button")
             }
         }.padding(.vertical, 10)
         .frame(width: UISize.width-40, height: 60, alignment: .center)
@@ -134,9 +162,42 @@ struct DemoButtonWidthBlock: View {
 struct DemoButtonFullWidth: View {
     var body: some View{
         HStack{
-            PgUiButton(Label: "A full-width button dark", ColorType: .dark, Width: .full){
+            PgUiButton(action: {
                 print("Okay!")
+            }, ColorType: .dark, Width: .full){
+                Text("A full-width button dark")
             }
+        }.padding(.vertical, 10)
+    }
+}
+
+
+struct DemoButtonIcon: View {
+    var body: some View{
+        HStack{
+            
+            PgUiButton(action: {
+                print("Okay!")
+            }, ColorType: .danger){
+                HStack{
+                    Image(systemName: "trash")
+                    Text("Delete")
+                }
+            }
+            
+            PgUiButton(action: {
+                print("Okay!")
+            }, ColorType: .custom(BackgroundHex: "#00FFFFFF", TextHex: "#fff")){
+                HStack{
+                    Image("logo-gitlab")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .padding(5)
+                        .padding(.horizontal, 20)
+                }
+            }.background(LinearGradient(gradient: Gradient(colors: [PgUiColor.tertiary.Background, PgUiColor.secondary.Background]), startPoint: .bottomLeading, endPoint: .topTrailing))
+            .cornerRadius(10)
+                        
         }.padding(.vertical, 10)
     }
 }
