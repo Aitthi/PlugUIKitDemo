@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "PlugUIKit",
+        "repositoryURL": "https://github.com/Aitthi/PlugUIKit",
+        "state": {
+          "branch": "main",
+          "revision": "91f339c1fe73bba52168c3d742a2d3ff96c6432b",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

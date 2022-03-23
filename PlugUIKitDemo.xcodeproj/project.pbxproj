@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3EC8BD0A27EB42AA00D6C273 /* PlugUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3EC8BD0927EB42AA00D6C273 /* PlugUIKit */; };
 		84BD05EB26C4F58700F12003 /* PlugUIKitDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD05EA26C4F58700F12003 /* PlugUIKitDemoApp.swift */; };
 		84BD05ED26C4F58700F12003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD05EC26C4F58700F12003 /* ContentView.swift */; };
 		84BD05EF26C4F58900F12003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84BD05EE26C4F58900F12003 /* Assets.xcassets */; };
@@ -22,7 +23,6 @@
 		84BD05EE26C4F58900F12003 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84BD05F126C4F58900F12003 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		84BD05F326C4F58900F12003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84BD05FA26C4F5B100F12003 /* PlugUIKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = PlugUIKit; path = ../PlugUIKit; sourceTree = "<group>"; };
 		84BD060226C4F95200F12003 /* DemoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -32,6 +32,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84BD05FE26C4F7ED00F12003 /* PlugUIKit in Frameworks */,
+				3EC8BD0A27EB42AA00D6C273 /* PlugUIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,7 +42,6 @@
 		84BD05DE26C4F58700F12003 = {
 			isa = PBXGroup;
 			children = (
-				84BD05FA26C4F5B100F12003 /* PlugUIKit */,
 				84BD05E926C4F58700F12003 /* PlugUIKitDemo */,
 				84BD05E826C4F58700F12003 /* Products */,
 				84BD05FC26C4F7ED00F12003 /* Frameworks */,
@@ -110,6 +110,7 @@
 			name = PlugUIKitDemo;
 			packageProductDependencies = (
 				84BD05FD26C4F7ED00F12003 /* PlugUIKit */,
+				3EC8BD0927EB42AA00D6C273 /* PlugUIKit */,
 			);
 			productName = PlugUIKitDemo;
 			productReference = 84BD05E726C4F58700F12003 /* PlugUIKitDemo.app */;
@@ -138,6 +139,9 @@
 				Base,
 			);
 			mainGroup = 84BD05DE26C4F58700F12003;
+			packageReferences = (
+				3EC8BD0827EB42AA00D6C273 /* XCRemoteSwiftPackageReference "PlugUIKit" */,
+			);
 			productRefGroup = 84BD05E826C4F58700F12003 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -356,7 +360,23 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		3EC8BD0827EB42AA00D6C273 /* XCRemoteSwiftPackageReference "PlugUIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Aitthi/PlugUIKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		3EC8BD0927EB42AA00D6C273 /* PlugUIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3EC8BD0827EB42AA00D6C273 /* XCRemoteSwiftPackageReference "PlugUIKit" */;
+			productName = PlugUIKit;
+		};
 		84BD05FD26C4F7ED00F12003 /* PlugUIKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PlugUIKit;
